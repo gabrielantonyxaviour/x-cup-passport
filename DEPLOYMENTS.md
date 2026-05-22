@@ -1,53 +1,24 @@
 # Deployments
 
-Date: 2026-05-22
+## X Layer Testnet (chain 1952)
 
-## X Layer Testnet
+**Deployed:** 2026-05-22T08:43Z
+**Deployer:** `0x933A12041Aae93Ac24Ec739C21c85CF26200355f` (Ratna persona)
 
-Status: blocked
-
-| Item | Value |
-|---|---|
-| RPC | `https://testrpc.xlayer.tech/terigon` |
-| Chain ID | `1952` |
-| Explorer | `https://www.okx.com/web3/explorer/xlayer-test` |
-| Required env | `X_LAYER_DEPLOYER_PRIVATE_KEY` |
-| Blocker | No funded deployer private key or approved wallet signing path is present in this workspace |
-
-Deployment command once funded:
-
-```bash
-export X_LAYER_TESTNET_RPC_URL=https://testrpc.xlayer.tech/terigon
-export X_LAYER_DEPLOYER_PRIVATE_KEY=0x...
-pnpm deploy:xlayer:testnet
-```
-
-## Local / Anvil
-
-Status: verified on 2026-05-22
-
-Local command:
-
-```bash
-anvil
-pnpm deploy:local
-```
-
-Verified local broadcast:
-
-| Contract | Local address | Local deploy tx |
+| Contract | Address | Tx |
 |---|---|---|
-| `XCupPassport` | `0x0b306bf915c4d645ff596e518faf3f9669b97016` | `0xf4d5bee887a80e4e42efa3e2072f9fc0cd61baee401eeefc55260e76eef7002a` |
-| `MatchResolver` | `0x959922be3caee4b8cd9a407cc3ac1c251c2007b1` | `0x1f4bfe48a07ee7aaf5427676888066e63b41b139738595246e88e37bddad8a09` |
-| `PredictionPool` | `0x9a9f2ccfde556a7e9ff0848998aa4a0cfd8863ae` | `0x97c3a83141c504942401f653d23b8932c8d22b74516b840708e9dd3baf7ab76e` |
-| `BanterBond` | `0x68b1d87f95878fe05b998f19b66f4baba5de1aed` | `0xd98c43c63ab3574ed60c8665359d3f988372d59e43fdc7e9502b728e3da3d601` |
+| XCupPassport | [`0x367bb457f3920999071b2ca44e5bad154bab7b3f`](https://www.okx.com/web3/explorer/xlayer-test/address/0x367bb457f3920999071b2ca44e5bad154bab7b3f) | [`0xc4bc02...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xc4bc02306b4888821b5117c430f5d8508d61da0decb74e292c089efd6808b3ba) |
+| MatchResolver | [`0xde9569897f660f1b3bfbd7f0065a52d6b2ce378d`](https://www.okx.com/web3/explorer/xlayer-test/address/0xde9569897f660f1b3bfbd7f0065a52d6b2ce378d) | [`0xb72c80...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xb72c80e111db6bb5628fa77ee2b5206d91b8b9a8cea678e2b37a4d2a98dd888e) |
+| PredictionPool | [`0x8ee5504a95575460e9bb8a645af8ce48de24a8ff`](https://www.okx.com/web3/explorer/xlayer-test/address/0x8ee5504a95575460e9bb8a645af8ce48de24a8ff) | [`0x87af47...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0x87af47379611ab9cdf334143a3e581e18bd06f5934fc5801a0a4838cdb5fed6d) |
+| BanterBond | [`0x49fe8980692c4fb4730921460085573b7ea8467e`](https://www.okx.com/web3/explorer/xlayer-test/address/0x49fe8980692c4fb4730921460085573b7ea8467e) | [`0x633bd9...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0x633bd942146388ce135bbd78211d2a5210bce2fbd5418d293e1897ddcb0e0562) |
 
-Local state-transition smoke:
+Post-deploy: XCupPassport.setGameAuthorization(PredictionPool, true) — [`0xc00d4c7...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xc00d4c7594a6fbbe2052add01d60d9354787af383c07c68e8b212d632114ddd8)
 
-- Created fixture `Brazil vs Japan`.
-- Minted passport from local account `0x70997970C51812dc3A010C7d01b50e0d17dc79C8`.
-- Submitted prediction for match `1`.
-- Resolved result as Brazil `2-0`.
-- Settled prediction and read passport state: owner `0x70997970C51812dc3A010C7d01b50e0d17dc79C8`, nation `Brazil`, score `3`, predictions `1`, badges `1`.
+## RPC
 
-This is local/anvil proof only, not X Layer deployment.
+- `https://testrpc.xlayer.tech/terigon`
+- Chain ID: 1952
+
+## Proof artifacts
+
+- `broadcast/Deploy.s.sol/1952/run-latest.json` — full forge broadcast record
