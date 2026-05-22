@@ -14,7 +14,7 @@ Final status: demo-ready
 | Local visual QA at 375 / 768 / 1440 | `screenshots/visual-qa/home-375-final2.png`, `home-768-final.png`, `home-1440-final.png`; mobile overflow check returned width `375`, viewport `375` | local-visual-qa-passed |
 | Formal /polish | M2 env present; no attached Chrome at check time; local fallback used per runbook | formal-polish-blocked-by-m2 |
 | Security/audit/dependency check | Secret scan over project excluding generated cache/broadcast found no real committed secrets; `.env` ignored; no prod `console.log` in app code | passed |
-| Repo pushed | Public repo `https://github.com/gabrielantonyxaviour/x-cup-passport`; commit `3ba45b13dea429d14ccdb66f6e4b7810bf06b8e4` pushed to `main` | passed |
+| Repo pushed | Public repo `https://github.com/gabrielantonyxaviour/x-cup-passport`; local `main` pushed to `origin/main` | passed |
 | Public/local demo URL | Local server running at `http://127.0.0.1:5175/` | local-ready |
 | Submission portal prep | `agent-browser` preflight with Gabriel profile identified required Google Form fields; no submit | partial |
 | Hidden mock/fake claim audit | Fixtures labeled in UI/docs; X Layer deployment, X post, and final submission blockers recorded | passed |

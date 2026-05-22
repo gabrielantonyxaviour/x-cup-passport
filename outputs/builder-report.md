@@ -15,7 +15,7 @@ The local product, contracts, tests, deployment scripts, browser proof, and subm
 - Public repo: `https://github.com/gabrielantonyxaviour/x-cup-passport`
 - Owner preflight: `gh auth status` and `gh api user` confirmed active account `gabrielantonyxaviour`.
 - Visibility: `PUBLIC`.
-- Push status: initial commit `3ba45b13dea429d14ccdb66f6e4b7810bf06b8e4` pushed to `main`.
+- Push status: local `main` pushed to `origin/main`.
 
 ## Submission Portal Status
 

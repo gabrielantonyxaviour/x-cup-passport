@@ -22,7 +22,7 @@ Public repo created and pushed:
 - Active GitHub account matches Gabriel. Verified: `gabrielantonyxaviour`.
 - Repo is public. Verified through `gh repo view`.
 - Remote URL is recorded here and in README.
-- Latest commit hash is pushed. Verified: `3ba45b13dea429d14ccdb66f6e4b7810bf06b8e4`.
+- Latest local `main` has been pushed to `origin/main`.
 - Google Form repo field points to that public URL.
 
 ## Stop Conditions
