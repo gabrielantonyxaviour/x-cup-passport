@@ -39,6 +39,6 @@ One-line: A World Cup fan passport on X Layer where non-cash predictions and riv
 | Browser proof | Pending |
 | Local visual QA | Pending |
 | X Layer deployment | Blocked until funded deployer/wallet path |
-| Public GitHub repo | Pending account/repo preflight |
+| Public GitHub repo | Ready: `https://github.com/gabrielantonyxaviour/x-cup-passport` |
 | Project X handle/post | Blocked until Gabriel approves/provides |
 | Google Form final submit | Not authorized |

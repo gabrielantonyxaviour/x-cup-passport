@@ -12,15 +12,17 @@ The local product, contracts, tests, deployment scripts, browser proof, and subm
 
 ## Repo Status
 
-- Planned public repo: `https://github.com/gabrielantonyxaviour/x-cup-passport`
+- Public repo: `https://github.com/gabrielantonyxaviour/x-cup-passport`
 - Owner preflight: `gh auth status` and `gh api user` confirmed active account `gabrielantonyxaviour`.
-- Push status at report write time: pending final commit and push.
+- Visibility: `PUBLIC`.
+- Push status: initial commit `3ba45b13dea429d14ccdb66f6e4b7810bf06b8e4` pushed to `main`.
 
 ## Submission Portal Status
 
 - Official Google Form: `https://docs.google.com/forms/d/e/1FAIpQLSdj19ZO-gQwLKEz36Z2XDLL7eTdSr-PRXcDmy4p6G2GFvrWKw/viewform?usp=dialog`
 - `agent-browser` with Gabriel profile opened the form and confirmed Gabriel email checkbox plus required fields.
-- Required but blocked fields: project X handle, project X post link, Telegram contacts, team X contacts, public GitHub link.
+- Required but blocked fields: project X handle, project X post link, Telegram contacts, team X contacts.
+- GitHub field is ready: `https://github.com/gabrielantonyxaviour/x-cup-passport`.
 - Final submit: not authorized and not attempted.
 
 ## Plugin / Backend / API Status

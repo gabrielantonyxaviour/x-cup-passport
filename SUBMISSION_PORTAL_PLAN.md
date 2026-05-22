@@ -19,7 +19,7 @@ Date: 2026-05-22
 | X (Twitter) Post Link | Yes | Blocked until Gabriel approves live project post tagging `@XLayerOfficial` and `#BuildX` |
 | Team Members Telegram Contact | Yes | Blocked until Gabriel provides handles or approves placeholder-free contacts |
 | Team Members X Contact | Yes | Blocked until team X links are confirmed |
-| GitHub Repository Link | Yes | Blocked until public repo is created/pushed |
+| GitHub Repository Link | Yes | Ready: `https://github.com/gabrielantonyxaviour/x-cup-passport` |
 | Any other words to X Layer team | No | Draft after build |
 
 ## Current Prefill Status

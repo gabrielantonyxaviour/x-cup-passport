@@ -23,3 +23,4 @@
 - Local visual QA captured 375/768/1440 screenshots. First mobile pass found overflow; responsive fixes were applied and rechecked.
 - Playwright local proof clicked the four fixture-preview actions and verified `3 PTS` with no horizontal overflow at 375.
 - Formal M2 polish status: M2 env present, no attached Chrome; local visual fallback used and labeled.
+- Public GitHub repo created under Gabriel and pushed: `https://github.com/gabrielantonyxaviour/x-cup-passport`, commit `3ba45b13dea429d14ccdb66f6e4b7810bf06b8e4`.

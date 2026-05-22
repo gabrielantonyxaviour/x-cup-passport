@@ -11,6 +11,6 @@ Date: 2026-05-22
 | X Layer faucet | Official faucet page | Wallet/profile may be required | `agent-browser` Gabriel profile if attempted | No fixture | planned | May require wallet/CAPTCHA/user approval |
 | X Layer explorer | `https://www.okx.com/web3/explorer/xlayer-test` | None | Explorer links from tx hashes | No fixture | planned | Needs deployed tx hashes |
 | Sports fixtures | Future World Cup matches | None | Fixture file labels only | Fixture/demo data only, not live | planned | No live match data claim allowed |
-| GitHub repo | Gabriel profile or verified `gh` account | GitHub auth | `gh auth status` active account `gabrielantonyxaviour` | No fixture | planned | Repo creation/push pending final packet update |
+| GitHub repo | Gabriel profile or verified `gh` account | GitHub auth | Public repo `https://github.com/gabrielantonyxaviour/x-cup-passport`; commit `3ba45b13dea429d14ccdb66f6e4b7810bf06b8e4` pushed | No fixture | tested | None for repo; form still needs final field entry |
 | X account/post | Dedicated project X account | X login/profile | Live URL only after approval | Copy-only until live | blocked | Dedicated handle and approved post missing |
 | Google Form | Official form | Gabriel Google profile | `agent-browser` preflight saw required fields and Gabriel email checkbox | No fixture | partial | Final submit not authorized; X handle/post/repo fields missing |
