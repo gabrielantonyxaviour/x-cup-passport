@@ -1,0 +1,301 @@
+:root {
+  color: #eff4ff;
+  background: #050606;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(111, 255, 0, 0.18), transparent 28rem),
+    radial-gradient(circle at 90% 18%, rgba(255, 93, 75, 0.18), transparent 24rem), #050606;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.liquid {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.liquid::before {
+  position: absolute;
+  inset: 0;
+  padding: 1.3px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.48), transparent 45%, rgba(111, 255, 0, 0.24));
+  content: "";
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 94vh;
+  overflow: hidden;
+  border-bottom-right-radius: 34px;
+  border-bottom-left-radius: 34px;
+  padding: 28px clamp(18px, 4vw, 64px) 72px;
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.38;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 6, 6, 0.96) 0%, rgba(5, 6, 6, 0.58) 52%, rgba(5, 6, 6, 0.86) 100%),
+    repeating-linear-gradient(90deg, transparent 0 24.7%, rgba(255, 255, 255, 0.1) 25%, transparent 25.2% 49.7%);
+  content: "";
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.24;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 4px 4px;
+  mix-blend-mode: screen;
+}
+
+.nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: min(100%, 980px);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 16px 22px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 48px;
+  align-items: end;
+  max-width: 1200px;
+  min-height: 76vh;
+  margin: 0 auto;
+}
+
+.eyebrow,
+.label {
+  color: #6fff00;
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 840px;
+  margin-bottom: 22px;
+  font-size: clamp(48px, 9vw, 128px);
+  line-height: 0.92;
+}
+
+h1 span {
+  color: #ffb000;
+}
+
+.lede {
+  max-width: 660px;
+  color: rgba(239, 244, 255, 0.78);
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.heroActions, .cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary,
+.ghost,
+.cardActions button,
+.receiptCard button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.primary {
+  background: #6fff00;
+  color: #071006;
+}
+
+.ghost,
+.cardActions button {
+  border: 1px solid rgba(239, 244, 255, 0.2);
+  background: rgba(239, 244, 255, 0.06);
+  color: #eff4ff;
+}
+
+.proofCard {
+  padding: 24px;
+}
+
+.proofTag {
+  display: block;
+  margin-bottom: 20px;
+  color: #ff5d4b;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.proofCard strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+.proofCard p,
+.sectionHead p,
+.fixture p,
+.actionCard p,
+.receiptCard p {
+  color: rgba(239, 244, 255, 0.72);
+  line-height: 1.55;
+}
+
+.cockpit,
+.receipts {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.cockpit {
+  padding: 76px 0 36px;
+}
+
+.sectionHead {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 480px);
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.sectionHead h2 {
+  margin-bottom: 0;
+  font-size: clamp(38px, 6vw, 78px);
+  line-height: 0.98;
+}
+
+.fixture {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+  padding: 24px;
+}
+
+.fixture h3 {
+  margin: 8px 0;
+  font-size: clamp(28px, 5vw, 54px);
+}
+
+.score {
+  display: grid;
+  min-width: 150px;
+  place-items: center;
+  color: #ffb000;
+  font-family: "Anton", sans-serif;
+  font-size: 56px;
+  line-height: 0.9;
+}
+
+.score span {
+  color: #eff4ff;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.steps,
+.receipts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.actionCard,
+.receiptCard {
+  min-height: 250px;
+  padding: 22px;
+}
+
+.actionCard.done {
+  outline: 1px solid rgba(111, 255, 0, 0.54);
+}
+
+.cardIcon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: rgba(111, 255, 0, 0.14);
+  color: #6fff00;
+}

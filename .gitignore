@@ -1,0 +1,12 @@
+node_modules/
+dist/
+out/
+cache/
+broadcast/
+coverage/
+.env
+.env.local
+.DS_Store
+*.log
+screenshots/
+tsconfig.tsbuildinfo

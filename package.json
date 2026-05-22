@@ -1,0 +1,30 @@
+{
+  "name": "x-cup-passport",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:contracts": "forge test -vvv",
+    "build:contracts": "forge build",
+    "rpc:smoke": "node scripts/rpc-smoke.mjs",
+    "deploy:local": "forge script contracts/script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 --broadcast",
+    "deploy:xlayer:testnet": "forge script contracts/script/Deploy.s.sol --rpc-url ${X_LAYER_TESTNET_RPC_URL:-https://testrpc.xlayer.tech/terigon} --broadcast"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "lucide-react": "^0.560.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "typescript": "^5.9.3",
+    "viem": "^2.40.3",
+    "vite": "^7.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "playwright": "^1.60.0"
+  }
+}

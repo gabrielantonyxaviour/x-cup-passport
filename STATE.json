@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "kind": "hackathon-execution",
+  "hackathon": "X Layer X Cup Hackathon 2026",
+  "idea": "X Cup Passport + Banter Pools",
+  "slug": "x-layer-x-cup-hackathon-2026",
+  "runId": "2026-05-22T01-33-56Z",
+  "runDir": "/Users/gabrielantonyxaviour/Documents/hackathons/x-layer-x-cup-hackathon-2026/execution/2026-05-22T01-33-56Z-x-cup-passport-banter-pools",
+  "status": "prepared",
+  "agent": "gpt-5.5-builder",
+  "modelPolicy": "execution-code-builds-must-use-gpt-5.5-or-claude-opus-4.7-not-kimi",
+  "output": "/Users/gabrielantonyxaviour/Documents/hackathons/x-layer-x-cup-hackathon-2026/execution/2026-05-22T01-33-56Z-x-cup-passport-banter-pools/outputs/builder-report.md"
+}
