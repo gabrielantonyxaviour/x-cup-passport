@@ -135,32 +135,41 @@ export function Leaderboard() {
             return (
               <div
                 key={r.owner}
-                className={`flex items-center gap-4 border-b border-border px-4 py-3 last:border-0 ${
+                className={`flex items-center gap-3 border-b border-border px-3 py-3 last:border-0 sm:gap-4 sm:px-4 ${
                   isMe ? "bg-accent/5" : "bg-surface"
                 }`}
               >
-                <span className="tabular w-8 text-center text-muted">
+                <span className="tabular w-5 shrink-0 text-center text-muted sm:w-8">
                   {i + 1}
                 </span>
                 <img
                   src={`https://api.dicebear.com/9.x/shapes/svg?seed=${r.owner}`}
                   alt=""
-                  className="h-8 w-8 rounded-full"
+                  className="h-8 w-8 shrink-0 rounded-full"
                 />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-medium">
-                    {shortAddr(r.owner)}{" "}
-                    {isMe && <span className="text-accent">(you)</span>}
+                  <p className="tabular truncate text-sm font-medium">
+                    {shortAddr(r.owner)}
+                    {isMe && <span className="ml-1 text-accent">(you)</span>}
                   </p>
-                  <p className="text-xs text-muted">
+                  <p className="truncate text-xs text-muted">
                     {nationByName(r.nation)?.flag} {r.nation} · {r.predictions}{" "}
                     predictions
+                    <span
+                      className="sm:hidden"
+                      style={{ color: stageAccent[stage] }}
+                    >
+                      {" · "}
+                      {stage}
+                    </span>
                   </p>
                 </div>
-                <Pill className="hidden sm:inline-flex">
-                  <span style={{ color: stageAccent[stage] }}>{stage}</span>
-                </Pill>
-                <span className="tabular w-16 text-right text-lg font-medium">
+                <span className="hidden shrink-0 sm:inline-flex">
+                  <Pill>
+                    <span style={{ color: stageAccent[stage] }}>{stage}</span>
+                  </Pill>
+                </span>
+                <span className="tabular w-12 shrink-0 text-right text-lg font-medium sm:w-16">
                   {r.score}
                 </span>
               </div>

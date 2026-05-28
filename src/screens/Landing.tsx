@@ -176,9 +176,8 @@ export function Landing() {
             <motion.div
               key={s.n}
               initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 + i * 0.08 }}
               className="grid grid-cols-[auto_1fr] gap-5 bg-surface p-6 sm:p-8"
             >
               <span className="font-display text-3xl text-accent">{s.n}</span>
