@@ -15,9 +15,11 @@ export function AppShell() {
       <header className="sticky top-0 z-20 border-b border-border bg-bg/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-[15px] font-bold text-[#04130c]">
-              X
-            </span>
+            <img
+              src="/logo.png"
+              alt="X Cup Passport"
+              className="h-9 w-9 rounded-lg"
+            />
             <span className="font-display text-lg font-semibold tracking-tight">
               X Cup Passport
             </span>
