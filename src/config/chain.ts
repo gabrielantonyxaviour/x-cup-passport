@@ -32,7 +32,12 @@ export const FAUCET_URL = "https://www.okx.com/xlayer/faucet";
 export const GAS_FLOOR_WEI = 100_000_000_000_000n; // 0.0001 OKB
 
 const env = import.meta.env as Record<string, string | undefined>;
-export const PRIVY_APP_ID = env.NEXT_PUBLIC_PRIVY_APP_ID ?? "";
+// Dedicated X Cup Passport Privy app (public client identifiers — safe to ship).
+export const PRIVY_APP_ID =
+  env.NEXT_PUBLIC_PRIVY_APP_ID ?? "cmjzw9suo00p1l80c68gipkmc";
+export const PRIVY_CLIENT_ID =
+  env.NEXT_PUBLIC_PRIVY_CLIENT_ID ??
+  "client-WY6UJU2Zie1XFu84CKnKgxA2GLctxN1yLXgnNnmcAuoua";
 /** Cloudflare match-oracle Worker (owner-keyed resolveMatch) — lets any fan self-serve the loop. */
 export const ORACLE_URL =
   env.NEXT_PUBLIC_ORACLE_URL ?? "https://xcup-oracle.gabrielaxy.workers.dev";

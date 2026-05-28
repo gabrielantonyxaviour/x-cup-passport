@@ -1,13 +1,14 @@
 import type { ReactNode } from "react";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { xLayerTestnet } from "./config/chain";
-import { PRIVY_APP_ID } from "./config/chain";
+import { PRIVY_APP_ID, PRIVY_CLIENT_ID } from "./config/chain";
 import { ToastProvider } from "./components/toast";
 
 export function AppProviders({ children }: { children: ReactNode }) {
   return (
     <PrivyProvider
       appId={PRIVY_APP_ID}
+      clientId={PRIVY_CLIENT_ID}
       config={{
         defaultChain: xLayerTestnet,
         supportedChains: [xLayerTestnet],
@@ -18,7 +19,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
         appearance: {
           theme: "dark",
           accentColor: "#2BE38B",
-          logo: undefined,
+          logo: "https://xcup-passport.pages.dev/logo.png",
           walletChainType: "ethereum-only",
         },
       }}
