@@ -33,8 +33,9 @@ export const GAS_FLOOR_WEI = 100_000_000_000_000n; // 0.0001 OKB
 
 const env = import.meta.env as Record<string, string | undefined>;
 export const PRIVY_APP_ID = env.NEXT_PUBLIC_PRIVY_APP_ID ?? "";
-/** Cloudflare match-oracle Worker (owner-keyed resolveMatch). Empty until deployed. */
-export const ORACLE_URL = env.NEXT_PUBLIC_ORACLE_URL ?? "";
+/** Cloudflare match-oracle Worker (owner-keyed resolveMatch) — lets any fan self-serve the loop. */
+export const ORACLE_URL =
+  env.NEXT_PUBLIC_ORACLE_URL ?? "https://xcup-oracle.gabrielaxy.workers.dev";
 /** Cloudflare indexer Worker (leaderboard + stats from chain events). Empty until deployed. */
 export const INDEXER_URL = env.NEXT_PUBLIC_INDEXER_URL ?? "";
 /** Cloudflare OG share-card Worker. Empty until deployed. */

@@ -1,0 +1,8 @@
+name = "xcup-oracle"
+main = "index.ts"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+account_id = "893c47ccb111ed55932bf2c9316d5f9d"
+
+# Secret (set out-of-band, never committed):
+#   wrangler secret put DEPLOYER_PRIVATE_KEY
