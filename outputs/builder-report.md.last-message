@@ -1,0 +1,35 @@
+Implemented and pushed the MVP.
+
+Status: `demo-ready`, not `submit-ready`.
+
+Repo: https://github.com/gabrielantonyxaviour/x-cup-passport  
+Local app is running: `http://127.0.0.1:5175/`  
+Builder report: [outputs/builder-report.md](/Users/gabrielantonyxaviour/Documents/hackathons/x-layer-x-cup-hackathon-2026/execution/2026-05-22T01-33-56Z-x-cup-passport-banter-pools/outputs/builder-report.md)
+
+Built:
+- Foundry contracts: `XCupPassport`, `MatchResolver`, `PredictionPool`, `BanterBond`
+- Vite/React UI with labeled fixture preview and real wallet/contract path
+- X Layer deploy script and RPC smoke check
+- Public GitHub repo under Gabriel
+- Submission portal preflight via Gabriel profile, stopped before submit
+
+Verified:
+- `forge build`
+- `forge test -vvv` -> 3 passed
+- `pnpm build`
+- `pnpm rpc:smoke` -> X Layer testnet chain ID `1952`
+- Local anvil deploy + full state transition: mint, predict, resolve, settle -> passport score `3`
+- Local browser proof and screenshots at 375/768/1440
+- Formal polish: blocked by M2/no attached Chrome; local fallback completed and labeled
+
+Hard blockers left:
+- Need funded X Layer deployer key or approved wallet deployment path.
+- Need dedicated project X handle and approved post link tagging `@XLayerOfficial` / `#BuildX`.
+- Need team Telegram/X contact fields.
+- Final Google Form submission still requires Gabriel’s explicit approval.
+
+Official sources used:
+- https://web3.okx.com/xlayer/build-x-hackathon/xcup
+- https://web3.okx.com/xlayer/docs/developer/build-on-xlayer/network-information
+- https://docs.google.com/forms/d/e/1FAIpQLSdj19ZO-gQwLKEz36Z2XDLL7eTdSr-PRXcDmy4p6G2GFvrWKw/viewform?usp=dialog
+
