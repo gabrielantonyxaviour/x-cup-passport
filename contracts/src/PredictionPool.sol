@@ -71,7 +71,7 @@ contract PredictionPool {
 
         uint8 result = resolver.resultOf(prediction.matchId);
         bool correct = result == prediction.pick;
-        uint256 points = correct ? 3 : 0;
+        uint256 points = correct ? 10 : 0; // 10 pts/correct → tournament-stage tiers in XCupPassport
         prediction.points = points;
         prediction.settled = true;
         passport.recordPredictionResult(prediction.fan, points, correct);

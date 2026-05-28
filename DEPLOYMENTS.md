@@ -1,24 +1,60 @@
 # Deployments
 
-## X Layer Testnet (chain 1952)
+## X Layer Testnet (chain 1952) — build-to-win redeploy
 
-**Deployed:** 2026-05-22T08:43Z
+**Deployed:** 2026-05-29
 **Deployer:** `0x933A12041Aae93Ac24Ec739C21c85CF26200355f` (Ratna persona)
+**Why redeployed:** `XCupPassport` rewritten as a real **soulbound, dynamic ERC-721** with fully on-chain SVG `tokenURI` + ERC-4906 (the previous version was a non-standard struct, not an NFT). All four contracts redeployed clean with WC2026 fixtures seeded.
 
-| Contract | Address | Tx |
+| Contract | Address | Deploy Tx |
 |---|---|---|
-| XCupPassport | [`0x367bb457f3920999071b2ca44e5bad154bab7b3f`](https://www.okx.com/web3/explorer/xlayer-test/address/0x367bb457f3920999071b2ca44e5bad154bab7b3f) | [`0xc4bc02...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xc4bc02306b4888821b5117c430f5d8508d61da0decb74e292c089efd6808b3ba) |
-| MatchResolver | [`0xde9569897f660f1b3bfbd7f0065a52d6b2ce378d`](https://www.okx.com/web3/explorer/xlayer-test/address/0xde9569897f660f1b3bfbd7f0065a52d6b2ce378d) | [`0xb72c80...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xb72c80e111db6bb5628fa77ee2b5206d91b8b9a8cea678e2b37a4d2a98dd888e) |
-| PredictionPool | [`0x8ee5504a95575460e9bb8a645af8ce48de24a8ff`](https://www.okx.com/web3/explorer/xlayer-test/address/0x8ee5504a95575460e9bb8a645af8ce48de24a8ff) | [`0x87af47...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0x87af47379611ab9cdf334143a3e581e18bd06f5934fc5801a0a4838cdb5fed6d) |
-| BanterBond | [`0x49fe8980692c4fb4730921460085573b7ea8467e`](https://www.okx.com/web3/explorer/xlayer-test/address/0x49fe8980692c4fb4730921460085573b7ea8467e) | [`0x633bd9...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0x633bd942146388ce135bbd78211d2a5210bce2fbd5418d293e1897ddcb0e0562) |
+| XCupPassport (soulbound dynamic ERC-721) | [`0xf8a679f1aeaa2482859175861a2c583ca1eb97f8`](https://www.okx.com/web3/explorer/xlayer-test/address/0xf8a679f1aeaa2482859175861a2c583ca1eb97f8) | [`0x208dc3a6…`](https://www.okx.com/web3/explorer/xlayer-test/tx/0x208dc3a693cfd15e002481032cd595cdb212bb97ccf8c2000144a4ea810c3249) |
+| MatchResolver | [`0x64b3787c041393c083b94e55becf2665fc520dee`](https://www.okx.com/web3/explorer/xlayer-test/address/0x64b3787c041393c083b94e55becf2665fc520dee) | [`0xbbc480d9…`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xbbc480d9c565ab51058fe1744c68889e5ada0099dd06f1bdc467c5c526c419d2) |
+| PredictionPool | [`0x087521f9ff3ecb4f3503d152e4d7a6dd68a0cc1e`](https://www.okx.com/web3/explorer/xlayer-test/address/0x087521f9ff3ecb4f3503d152e4d7a6dd68a0cc1e) | [`0xdefad585…`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xdefad5850c0155a5b3eddb05051a35668270cb39e8efeb0cfced7d8256d639d1) |
+| BanterBond | [`0x24b52bf60e99f4801446e2a12666041efeb2a74f`](https://www.okx.com/web3/explorer/xlayer-test/address/0x24b52bf60e99f4801446e2a12666041efeb2a74f) | [`0xfed53a5e…`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xfed53a5ebe728fa87aed4a46bbe174bf9876a84840eb7e6e18355b2fa5ccf959) |
 
-Post-deploy: XCupPassport.setGameAuthorization(PredictionPool, true) — [`0xc00d4c7...`](https://www.okx.com/web3/explorer/xlayer-test/tx/0xc00d4c7594a6fbbe2052add01d60d9354787af383c07c68e8b212d632114ddd8)
+Post-deploy wiring (in the same broadcast): `XCupPassport.setGameAuthorization(PredictionPool, true)` + 8 `MatchResolver.createMatch(...)` seeding simulated WC2026 group-stage fixtures (`demoFixture = true`).
+
+### On-chain verification (live, 2026-05-29)
+
+- `name() = "X Cup Passport"`, `symbol() = "XCUP"`.
+- `supportsInterface(0x80ac58cd) = true` (ERC-721), `supportsInterface(0x49064906) = true` (ERC-4906).
+- `nextMatchId = 9` → 8 fixtures seeded.
+- **Full loop proven on-chain:** minted passport #1 (Brazil) → submitted 3 predictions (matches 5/6/7) → resolved + settled → passport `score = 30`, `predictions = 3`, `badges = 3`, **`stageOf(1) = "Round of 16"`** (evolved from Group Stage). Live `tokenURI(1)` decodes to valid JSON + on-chain SVG reflecting the new stage.
+
+### Fixtures (simulated, pre-tournament — admin/owner resolved, no live sports oracle)
+
+| matchId | Fixture |
+|---|---|
+| 1 | Mexico vs Croatia |
+| 2 | USA vs Wales |
+| 3 | Canada vs Belgium |
+| 4 | Argentina vs Nigeria |
+| 5 | Brazil vs Serbia |
+| 6 | France vs Australia |
+| 7 | England vs Iran |
+| 8 | Spain vs Japan |
 
 ## RPC
 
 - `https://testrpc.xlayer.tech/terigon`
 - Chain ID: 1952
+- Explorer: `https://www.okx.com/web3/explorer/xlayer-test`
+
+## Reproduce
+
+```bash
+set -a; source .env; set +a   # X_LAYER_TESTNET_RPC_URL, X_LAYER_DEPLOYER_PRIVATE_KEY
+forge script contracts/script/Deploy.s.sol \
+  --rpc-url "$X_LAYER_TESTNET_RPC_URL" \
+  --private-key "$X_LAYER_DEPLOYER_PRIVATE_KEY" \
+  --broadcast --legacy
+```
 
 ## Proof artifacts
 
-- `broadcast/Deploy.s.sol/1952/run-latest.json` — full forge broadcast record
+- `broadcast/Deploy.s.sol/1952/run-latest.json` — full forge broadcast record.
+
+## X Layer Mainnet
+
+Not attempted. Hackathon submission is testnet-only.
