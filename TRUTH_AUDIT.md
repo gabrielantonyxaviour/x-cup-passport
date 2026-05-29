@@ -1,20 +1,24 @@
 # Truth Audit
 
-Hackathon: X Layer X Cup Hackathon 2026  
-Idea: X Cup Passport + Banter Pools  
-Date: 2026-05-22
+Hackathon: X Layer X Cup Hackathon 2026
+Idea: X Cup Passport + Banter Pools
+Updated: 2026-05-29
 
-| Claim | Reality: real / fixture / mock / blocked / not attempted / removed | Evidence | User-facing label needed? | Action |
-|---|---|---|---|---|
-| Official hackathon exists and requires X Layer deployment | real | Official page verified 2026-05-22 | No | Cite in README/report |
-| X Layer testnet chain ID is 1952 | real | Official network docs verified 2026-05-22 | No | Use in config/scripts |
-| World Cup match data is live | removed | User override says future matches | Yes | Never claim live match data |
-| Demo fixture represents real live sports feed | removed | Fixture policy | Yes | Label as fixture/demo data |
-| Product is deployed on X Layer | blocked | No funded deployer/private key yet; local/anvil deploy verified only | Yes | Ask Gabriel for funded deployer or approved wallet path |
-| Product is submitted | not attempted | No final authorization | Yes | Stop before final form submit |
-| Project X post exists | blocked | Required form field, no approved handle/post yet | Yes | Generate copy only |
-| Local product works | real | `forge test`, `pnpm build`, local/anvil smoke, browser/Playwright proof | Fixture labels stay visible | Keep final status below submit-ready until live blockers clear |
+| Claim | Reality | Evidence | User-facing label? |
+|---|---|---|---|
+| Official hackathon exists, requires X Layer deployment | real | Official page verified | No |
+| X Layer testnet chain ID is 1952 | real | Official network docs | No |
+| Passport is a real, standards-compliant NFT | **real** | Soulbound ERC-721 + ERC-4906; `supportsInterface(0x80ac58cd/0x5b5e139f/0x49064906)=true` on-chain | No |
+| Passport art is fully on-chain and evolves | **real** | `tokenURI` returns base64 JSON + on-chain SVG; tier changes with score; verified live | No |
+| Product is deployed on X Layer | **real** | 4 contracts live on chain 1952 (see DEPLOYMENTS.md), tx hashes recorded | No |
+| Full loop works end-to-end on-chain | **real** | mint→predict→resolve→settle→evolve proven via cast AND live UI E2E (screenshots in /tmp/verify) | No |
+| Leaderboard reads from chain | **real** | Client reads `XCupPassport` directly; indexer optional | No |
+| App is live and usable | **real** | https://xcup-passport.pages.dev (Privy + OKX login) | No |
+| World Cup match results are live/real | **simulated** | WC2026 starts mid-June (after judging); no live feed exists | **Yes — labeled "pre-tournament simulation" in UI** |
+| Match outcomes are admin/oracle-resolved, not a sports oracle | **real (by design)** | `MatchResolver` owner / Cloudflare oracle resolves; clearly stated | **Yes** |
+| Product is submitted | **real** | Submitted to X Cup Google Form 2026-05-29 (see SUBMISSION.md) | No |
+| Dedicated project X account exists | **real** | https://x.com/XCupPassport | No |
 
 Rules:
-- Do not claim live, onchain, deployed, submitted, verified, paid, sent, minted, uploaded, or connected without evidence.
-- Fixtures are allowed only when visible in UI, README, demo script, and QUALITY_GATE.md.
+- No claims of live/onchain/deployed/minted/verified without evidence (all above are evidenced).
+- The only simulated element is **match outcomes** (real WC2026 is post-judging) — labeled everywhere it appears.
